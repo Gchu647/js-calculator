@@ -5,7 +5,45 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+// Revealing module pattern
+var calculatorModule = (function() {
+    var memory = 0;
+    var total = 0;
 
+    var load = function(num) {
+        total = num;
+        return total;
+    }
+
+    var getTotal =  function() {
+        return total;
+    }
+
+    var add = function(num) {
+        total += num;
+        return total;
+    }
+
+    var subtract = function(num) {
+        total -= num;
+        return total;
+    }
+
+    /*
+    var multiply = function(num) {
+        total *= num;
+        return total;
+    }
+    */
+
+    return{
+        load: load, //Property and the function can have the same name.
+        getTotal: getTotal,
+        add: add,
+        subtract: subtract,
+    }
+
+});
 
   /**
    * sets the `total` to the number passed in
@@ -18,6 +56,7 @@
    * Return the value of `total`
    * @return { Number }
    */
+
 
 
   /**
@@ -59,7 +98,10 @@
    * Clear the value stored at `memory`
    */
 
+
+
   /**
    * Validation
    */
+
 
