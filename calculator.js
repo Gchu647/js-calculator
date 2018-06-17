@@ -11,8 +11,12 @@ var calculatorModule = (function() {
     var total = 0;
 
     var load = function(num) {
-        total = num;
-        return total;
+        if(typeof num === "number") {
+            total = num;
+            return total;
+        } else {
+            alert("Error");
+        }
     }
 
     var getTotal =  function() {
@@ -20,27 +24,64 @@ var calculatorModule = (function() {
     }
 
     var add = function(num) {
-        total += num;
-        return total;
+        if(typeof num === "number") {
+            total += num;
+            return total;
+        } else {
+            alert("Error");
+        }
     }
 
     var subtract = function(num) {
-        total -= num;
-        return total;
+        if(typeof num === "number") {
+            total -= num;
+            return total;
+        } else {
+            alert("Error");
+        }
     }
 
-    /*
     var multiply = function(num) {
-        total *= num;
-        return total;
+        if(typeof num === "number") {
+            total *= num;
+            return total;
+        } else {
+            alert("Error");
+        }
     }
-    */
+
+    var divide = function(num) {
+        if(typeof num === "number") {
+            total /= num;
+            return total;
+        } else {
+            alert("Error");
+        }
+    }
+
+    var recallMemory = function() {
+        return memory;
+    }
+
+    var saveMemory = function() {
+        memory = total;
+    }
+
+    var clearMemory = function() {
+        memory = 0;
+    }
+
 
     return{
         load: load, //Property and the function can have the same name.
         getTotal: getTotal,
         add: add,
         subtract: subtract,
+        multiply: multiply,
+        divide: divide,
+        recallMemory: recallMemory,
+        saveMemory: saveMemory,
+        clearMemory: clearMemory
     }
 
 });
@@ -50,12 +91,13 @@ var calculatorModule = (function() {
    * @param  { Number } x
    * @return { Number }    current total
    */
-
+    // DONE
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
+    // DONE
 
 
 
@@ -63,45 +105,51 @@ var calculatorModule = (function() {
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-
+    // DONE
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-
+    // DONE
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
+  // DONE
 
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
+  // DONE
 
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
+  // DONE
 
 
   /**
    * Stores the value of `total` to `memory`
    */
+  // DONE
 
 
   /**
    * Clear the value stored at `memory`
    */
+  // DONE
 
 
 
   /**
    * Validation
    */
+  // DONE
 
 
